@@ -15,7 +15,7 @@ int main() {
         case 2: trig();
         break;
         default: printf("Invalid choice! Please try again \n");
-        prompt();
+        main();
     }
     return 0;
 }
@@ -37,7 +37,7 @@ void basic() {
     int a, b; 
     float result;
     char c;
-    printf("Enter your operation. Allowed operators are \'+\', \'-\', \'*\', \'/\' and \'m\' \n");
+    printf("Enter your operation. Allowed operators are \'+\', \'-\', \'*\', \'/\' and \'%%\' \n");
     printf("Prompt> ");
     scanf("%d %c %d", &a, &c, &b);
     switch (c) {
@@ -49,7 +49,7 @@ void basic() {
         break;
         case '/': result = a / b;
         break;
-        case 'm': result = a % b;
+        case '%': result = a % b;
         break;
         default: printf("Invalid operator! Please try again \n");
         basic(); 
