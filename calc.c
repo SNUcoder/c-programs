@@ -4,17 +4,22 @@
 
 int main(void);
 int prompt(void);
-void basic(void);
+int basic(void);
 void trig(void);
 
 int main() {
     int ch = prompt();
+    int result;
     switch (ch) {
-        case 1: basic();
+        case 1: 
+            result = basic();
+            printf("Result is %.4f \n", result);
         break;
-        case 2: trig();
+        case 2: 
+            trig();
         break;
-        default: printf("Invalid choice! Please try again \n");
+        default: 
+            printf("\033[1;31mInvalid choice! Please try again\033[1;0m \n");
         main();
     }
     return 0;
@@ -33,7 +38,7 @@ int prompt() {
     return ch;
 }
 
-void basic() {
+int basic() {
     int a, b; 
     float result;
     char c;
@@ -54,7 +59,7 @@ void basic() {
         default: printf("Invalid operator! Please try again \n");
         basic(); 
     }
-    printf("Result is %.4f \n", result);
+    return result;
 }
 
 void trig() {
